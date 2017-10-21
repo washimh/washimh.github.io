@@ -42,6 +42,7 @@
 	    }
         var http_check = getHTTPObject();
 		function check_file(path_of_file){
+		document.write(path_of_file);
 		  http_check.open("HEAD", path_of_file);
 		  http_check.onreadystatechange = handleHttpResponse_check;
 		  http_check.send(null);
