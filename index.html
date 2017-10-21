@@ -1,61 +1,49 @@
 <!DOCTYPE html>
-  <html>
-	<body>
-	  <script type="text/javascript">
-		var z = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
-		for (var a in z){
-		  for (var b in z){
-		    for (var c in z){
-		      for (var d in z){
-		        for (var e in z){
-                  for (var f in z){
-                    for (var g in z){
-                      for (var h in z){
-                        for (var i in z){
-                          for (var j in z){
-                            check_file(("http://bigota.d.miui.com/7.10.19/miui-blockota-kenzo_global-7.10.12-7.10.19-"+z[a]+z[b]+z[c]+z[d]+z[e]+z[f]+z[g]+z[h]+z[i]+z[j]+"-6.0.zip"));
-		                  }
-		                }
-		              }
-		            }
-				  }
-		        }
-		      }
-		    }
-		  }
-		}
-		function getHTTPObject(){
-          var xmlhttp = false;
-          try {
-		    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-	      }catch (e){
-		    try{
-		      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		    }catch (E) {
-		      xmlhttp = false;
-		    }
-		  }
-		  if (!xmlhttp && typeof XMLHttpRequest != 'undefined'){
-		    xmlhttp = new XMLHttpRequest();
-		  }
-		  return xmlhttp;
-	    }
-        var http_check = getHTTPObject();
-		function check_file(path_of_file){
-		document.write(path_of_file);
-		  http_check.open("HEAD", path_of_file);
-		  http_check.onreadystatechange = handleHttpResponse_check;
-		  http_check.send(null);
-		  function handleHttpResponse_check(){
-		    if(http_check.readyState == 4){
-			  if (http_check.status == 200){
-                document.write(path_of_file);
-				}else if(http_check.status == 404){
-				document.write("0");
-              }
-            }
-          }
-        }
-	  </script>
-    </body>
-  </html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1>My Website</h1>
+	
+    <p>This is my first website</p>
+	<p id="demo">hello</p>
+	<script type="text/javascript">
+	  var z = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+	  for(var a in z){
+	  for(var b in z){
+	  for(var c in z){
+	  for(var d in z){
+	  for(var e in z){
+	  for(var f in z){
+	  for(var g in z){
+	  for(var h in z){
+	  for(var i in z){
+	  for(var j in z){
+		var x = httpGet("http://bigota.d.miui.com/7.10.19/miui-blockota-kenzo_global-7.10.12-7.10.19-"+z[a]+z[b]+z[c]+z[d]+z[e]+z[f]+z[g]+z[h]+z[i]+z[j]+"-6.0.zip");
+		document.write(x);
+	  }
+	  }
+	  }
+	  }
+	  }
+	  }
+	  }
+	  }
+	  }
+	  }
+	  function httpGet(theUrl){
+	     var xmlHttp = new XMLHttpRequest();
+		 try{
+           xmlHttp.open("GET", theUrl, false );
+		   xmlHttp.send(null);
+		   return xmlHttp.responseText;
+		 }catch(e){
+		     return "0";
+		 }
+	  }
+	  
+	</script>
+  </body>
+</html>		
