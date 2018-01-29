@@ -9,19 +9,6 @@
 	
     <p>This is my first website</p>
 	<p id="demo">hello</p>
-	<script type="text/javascript">
-	  function httpGet(theUrl){
-	     var xmlHttp = new XMLHttpRequest();
-		 try{
-           xmlHttp.open("GET", theUrl, false );
-		   xmlHttp.send(null);
-		   return xmlHttp.responseText;
-		 }catch(e){
-		     return "0";
-		 }
-	  }
-	  document.write(navigator);
-	</script>
 	<?php echo php_uname(); ?>
   </body>
 </html>		
